@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskHub | Gestión de Tareas</title>
+    <link rel="stylesheet" href="css/list.css" />
+  </head>
+  <body>
+    <form>
+      <button type="button" id="toggleFilter">Filtro</button>
+    </form>
+    <!-- Filtros de Tareas -->
+    <section id="task-filters">
+      <h2>Filtrar Tareas</h2>
+      <form action="" method="post" id="filter-form">
+        <fieldset>
+          <legend>Buscar por título</legend>
+          <input
+            type="text"
+            id="keyword"
+            name="keyword"
+            placeholder="Introduce el título..."
+            aria-label="Buscar por título"
+          />
+        </fieldset>
+        <fieldset>
+          <legend>Buscar por estado:</legend>
+          <input type="radio" id="all" name="status" value="all" checked />
+          <label for="all">Todas</label>
+          <input type="radio" id="pendiente" name="status" value="pendiente" />
+          <label for="pendiente">Pendientes</label>
+          <input type="radio" id="completa" name="status" value="completa" />
+          <label for="completa">Completas</label>
+        </fieldset>
+        <fieldset>
+          <legend>Buscar por prioridad:</legend>
+          <select
+            id="priority-filter"
+            name="priority"
+            aria-label="Buscar por prioridad"
+          >
+            <option value="any">Todas</option>
+            <option value="baja">Baja</option>
+            <option value="media">Media</option>
+            <option value="alta">Alta</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>
+            <strong>Buscar por fechas:</strong>
+          </legend>
+          <label for="start-date">Desde:</label>
+          <input
+            type="date"
+            id="start-date"
+            name="start-date"
+            aria-label="Fecha desde"
+          />
+          <label for="end-date">Hasta:</label>
+          <input
+            type="date"
+            id="end-date"
+            name="end-date"
+            aria-label="Fecha hasta"
+          />
+        </fieldset>
+        <button type="submit" id="apply-filters">Aplicar Filtros</button>
+      </form>
+    </section>
+    <main id="task-list">
+      <header>
+        <h2 class="section-title">Lista de Tareas</h2>
+        <a href="create.html" class="btn btn-primary"> Crear Nueva Tarea </a>
+      </header>
+
+      <ul>
+        <li>
+          <section>
+            <article>
+              <dl>
+                <dt>Título:</dt>
+                <dd>Comprar Comida</dd>
+              </dl>
+              <dl>
+                <dt>Vencimiento:</dt>
+                <dd>2025-03-01</dd>
+              </dl>
+              <dl>
+                <dt>Usuario:</dt>
+                <dd>Matias</dd>
+              </dl>
+            </article>
+            <article>
+              <dl>
+                <dt>Prioridad:</dt>
+                <dd>Baja</dd>
+              </dl>
+              <dl>
+                <dt>Estado:</dt>
+                <dd>Pendiente</dd>
+              </dl>
+            </article>
+          </section>
+
+          <a href="editar.html">Editar</a>
+          <form action="" method="post">
+            <input type="hidden" name="taskId" value="1" />
+            <button type="button" aria-label="change">Completada</button>
+          </form>
+          <form action="" method="post">
+            <input type="hidden" name="taskId" value="1" />
+            <button type="button" aria-label="delete">Eliminar</button>
+          </form>
+        </li>
+      </ul>
+    </main>
+    <script type="module">
+      const toggleFilter = document.querySelector("#toggleFilter");
+      toggleFilter.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector("#task-filters").classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

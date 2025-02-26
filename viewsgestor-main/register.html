@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskHub | Register</title>
+    <link rel="stylesheet" href="css/register.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Bienvenido a <span>TaskHub</span></h1>
+        <p>Dejanos tus credenciales para poder iniciar sesión</p>
+      </header>
+      <form action="" method="post" autocomplete="off">
+        <fieldset>
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required />
+          <small class="feedback error">
+            Completar el nombre es obligatorio
+          </small>
+          <small class="feedback success"> Nombre está correcto </small>
+        </fieldset>
+        <fieldset>
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="email" required />
+          <small class="feedback"></small>
+          <small class="feedback"></small>
+        </fieldset>
+        <fieldset>
+          <label for="password">Clave</label>
+          <input type="password" id="password" name="password" />
+          <button type="button" id="btnPassword">Mostrar</button>
+          <small class="feedback"></small>
+          <small class="feedback"></small>
+        </fieldset>
+        <fieldset>
+          <label for="confirm_password">Confirmar Clave</label>
+          <input
+            type="password"
+            id="confirm_password"
+            name="confirm_password"
+          />
+          <button type="button" id="btnConfirmPassword">Mostrar</button>
+          <small class="feedback"></small>
+          <small class="feedback"></small>
+        </fieldset>
+        <output class="feedback"></output>
+        <output class="feedback"></output>
+        <button type="submit">Guardar Usuario</button>
+      </form>
+      <p>
+        Si ya tienes cuenta, puedes hacer click
+        <a href="login.html">Acá</a>
+      </p>
+    </main>
+  </body>
+</html>
