@@ -11,7 +11,7 @@ body {
   background-color: #f4f6f9;
 }
 
-.container {
+body > main {
   overflow: hidden;
   border-radius: 1rem;
   box-shadow: 0 0 0.25rem 0 rgba(15, 20, 73, 0.4);
@@ -25,7 +25,7 @@ body {
   background-color: #fff;
 }
 
-.header {
+body > main header {
   width: 100%;
   padding: 1rem;
   display: flex;
@@ -36,14 +36,14 @@ body {
   border-radius: 0.5rem;
 }
 
-.header h1 {
+body > main header h1 {
   color: #fafafa;
   font-weight: 700;
   margin: 0;
   font-size: 1.5rem;
 }
 
-.header .highlight {
+body > main header h1 span {
   background-image: linear-gradient(to left, #03a9f4, #00bcd4);
   background-clip: text;
   color: transparent;
@@ -52,13 +52,13 @@ body {
   font-weight: 900;
 }
 
-.header p {
+body > main header p {
   color: #fafafa;
   font-weight: 400;
   margin: 0;
 }
 
-.task-form {
+#task-form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -66,20 +66,19 @@ body {
   padding: 1rem;
 }
 
-.form-group {
+#task-form fieldset {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   border: none;
 }
 
-.task-form label {
+#task-form label {
   font-weight: 600;
   color: #1a237e;
 }
 
-.task-form input,
-.task-form textarea {
+#task-form input {
   width: 100%;
   padding: 0.5rem;
   border: 0.1rem solid #03a9f4;
@@ -87,32 +86,56 @@ body {
   outline: none;
   transition: border-color 0.3s ease-in-out;
 }
+#task-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 0.1rem solid #03a9f4;
+  border-radius: 0.5rem;
+  outline: none;
+  min-height: 120px;
+  resize: none;
+  transition: border-color 0.3s ease-in-out;
+}
 
-.task-form input:focus,
-.task-form textarea:focus {
+#task-form input:focus,
+#task-form textarea:focus {
   border-color: #0288d1;
 }
 
-.task-form textarea {
-  min-height: 120px;
-  resize: vertical;
+#task-form fieldset:has(input[type="radio"]) {
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.priority-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+#task-form fieldset:has(input[type="radio"]) legend {
+  width: 100%;
+  color: #1a237e;
+  font-weight: 600;
 }
 
-.priority-group label {
+#task-form fieldset:has(input[type="radio"]) label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border: 0.1rem solid #03a9f4;
+  color: #03a9f4;
+  border-radius: 2rem;
+  transition: all 0.3s ease-in-out;
 }
 
-.priority-group input[type="radio"] {
-  width: auto;
+#task-form fieldset:has(input[type="radio"]) input[type="radio"] {
+  display: none;
+}
+
+#task-form
+  fieldset:has(input[type="radio"])
+  input[type="radio"]:checked
+  + label {
+  border-color: transparent;
+  background-color: #03a9f4;
+  color: #fafafa;
 }
 
 .task-form legend {
