@@ -1,0 +1,78 @@
+/* Boton de Logout */
+#btnLogout {
+  position: fixed;
+  z-index: 7;
+  top: 0.25rem;
+  left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+#btnLogout button {
+  height: 0.4in;
+  aspect-ratio: 1/1;
+  padding: 0.25rem;
+  border-radius: 50%;
+  background-color: #283593;
+  border: 0.1rem solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+#btnLogout button svg {
+  width: 100%;
+  height: 100%;
+  fill: #fafafa;
+}
+#btnLogout > small {
+  padding: 0.25rem 0.75rem;
+  background-color: #283593;
+  color: #fafafa;
+  border-radius: 1rem;
+}
+#btnLogout button:hover {
+  background-color: #fafafa;
+  border-color: #283593;
+}
+#btnLogout button:hover svg {
+  fill: #283593;
+}
+
+/* Back to Home */
+#ctaHome {
+  position: fixed;
+  z-index: 7;
+  bottom: 1rem;
+  left: 1rem;
+}
+#ctaHome a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0.4in;
+  aspect-ratio: 1/1;
+  padding: 0.25rem;
+  border-radius: 50%;
+  background-color: #283593;
+  border: 0.1rem solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+#ctaHome a svg {
+  width: 100%;
+  height: 100%;
+  fill: #fafafa;
+}
+
+#ctaHome a:hover {
+  background-color: #fafafa;
+  border-color: #283593;
+}
+#ctaHome a:hover svg {
+  fill: #283593;
+}
+
+/*Marca App*/
+#brand {
+}
+/*Copyright*/
+#copyRight {
+}

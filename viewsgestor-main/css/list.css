@@ -1,4 +1,5 @@
 @import url("./base.css");
+@import url("./elements.css");
 
 /* ==================================================
    General Layout and Main Structure
@@ -228,7 +229,7 @@ legend {
   opacity: 0.8;
 }
 
-body > form {
+#toggleFilter {
   display: none;
 }
 
@@ -273,7 +274,7 @@ body > form {
     align-items: center;
     flex: auto;
   }
-  body > form {
+  #toggleFilter {
     position: fixed;
     top: 0.25rem;
     right: 1rem;
@@ -282,7 +283,7 @@ body > form {
     justify-content: center;
     align-items: center;
   }
-  #toggleFilter {
+  #toggleFilter button {
     background-color: #0288d1;
     padding: 0.5rem 1.25rem;
     border-radius: 2rem;

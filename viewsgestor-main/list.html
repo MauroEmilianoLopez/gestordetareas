@@ -7,10 +7,35 @@
     <link rel="stylesheet" href="css/list.css" />
   </head>
   <body>
-    <form>
-      <button type="button" id="toggleFilter">Filtro</button>
+    <!-- Link para volver al Home -->
+    <!-- <nav id="ctaHome">
+      <a href="list.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+          <path
+            d="M160-200v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H600q-17 0-28.5-11.5T560-160v-200q0-17-11.5-28.5T520-400h-80q-17 0-28.5 11.5T400-360v200q0 17-11.5 28.5T360-120H240q-33 0-56.5-23.5T160-200Z"
+          />
+        </svg>
+      </a>
+    </nav> -->
+
+    <!--Formulario de Logout -->
+    <form action="" method="get" id="btnLogout">
+      <button type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+          <path
+            d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h240q17 0 28.5 11.5T480-800q0 17-11.5 28.5T440-760H200v560h240q17 0 28.5 11.5T480-160q0 17-11.5 28.5T440-120H200Zm487-320H400q-17 0-28.5-11.5T360-480q0-17 11.5-28.5T400-520h287l-75-75q-11-11-11-27t11-28q11-12 28-12.5t29 11.5l143 143q12 12 12 28t-12 28L669-309q-12 12-28.5 11.5T612-310q-11-12-10.5-28.5T613-366l74-74Z"
+          />
+        </svg>
+      </button>
+      <small>Matias</small>
     </form>
+
+    <!-- Header -->
+
     <!-- Filtros de Tareas -->
+    <form id="toggleFilter">
+      <button type="button">Filtro</button>
+    </form>
     <section id="task-filters">
       <h2>Filtrar Tareas</h2>
       <form action="" method="post" id="filter-form">
@@ -116,7 +141,7 @@
       </ul>
     </main>
     <script type="module">
-      const toggleFilter = document.querySelector("#toggleFilter");
+      const toggleFilter = document.querySelector("#toggleFilter button");
       toggleFilter.addEventListener("click", (e) => {
         e.preventDefault();
         document.querySelector("#task-filters").classList.toggle("active");

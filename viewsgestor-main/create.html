@@ -1,63 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TaskHub | Create</title>
+    <title>TaskHub | Crear Tarea</title>
     <link rel="stylesheet" href="css/create.css" />
   </head>
   <body>
-    <main>
-      <header>
-        <h1>Crea tu nueva tarea en <span>TaskHub</span></h1>
+    <main class="container">
+      <header class="header">
+        <h1>Crea tu nueva tarea en <span class="highlight">TaskHub</span></h1>
         <p>Rellena el formulario para crear tus tareas</p>
       </header>
-      <form action="list.html" method="get">
-        <fieldset>
-          <label for="title">Titulo *</label>
-          <input type="text" id="title" name="title" required />
-          <small class="feedback"></small>
+
+      <form action="list.html" method="get" class="task-form">
+        <fieldset class="form-group">
+          <label for="title">Título *</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            required
+            aria-describedby="title-feedback"
+          />
+          <small id="title-feedback" class="feedback"></small>
         </fieldset>
-        <fieldset>
-          <label for="enddate">Fecha de Vencimiento * </label>
-          <input type="date" id="enddate" name="enddate" required />
-          <small class="feedback"></small>
+
+        <fieldset class="form-group">
+          <label for="enddate">Fecha de Vencimiento *</label>
+          <input
+            type="date"
+            id="enddate"
+            name="enddate"
+            required
+            aria-describedby="date-feedback"
+          />
+          <small id="date-feedback" class="feedback"></small>
         </fieldset>
-        <fieldset>
+
+        <fieldset class="form-group priority-group">
           <legend>Prioridad *</legend>
-          <input
-            type="radio"
-            id="prioridad_baja"
-            name="prioridad"
-            value="baja"
-          />
-          <label for="prioridad_baja">Baja</label>
-          <input
-            type="radio"
-            id="prioridad_media"
-            name="prioridad"
-            value="media"
-          />
-          <label for="prioridad_media">Media</label>
-          <input
-            type="radio"
-            id="prioridad_alta"
-            name="prioridad"
-            value="alta"
-          />
-          <label for="prioridad_alta">Alta</label>
+          <label>
+            <input
+              type="radio"
+              id="prioridad_baja"
+              name="prioridad"
+              value="baja"
+            />
+            Baja
+          </label>
+          <label>
+            <input
+              type="radio"
+              id="prioridad_media"
+              name="prioridad"
+              value="media"
+            />
+            Media
+          </label>
+          <label>
+            <input
+              type="radio"
+              id="prioridad_alta"
+              name="prioridad"
+              value="alta"
+            />
+            Alta
+          </label>
           <small class="feedback"></small>
         </fieldset>
-        <fieldset>
+
+        <fieldset class="form-group">
           <label for="description">Descripción</label>
-          <textarea name="description" id="description"></textarea>
+          <textarea name="description" id="description" rows="4"></textarea>
           <small class="feedback"></small>
         </fieldset>
-        <button type="submit">Guardar Tarea</button>
+
+        <button type="submit" class="btn-submit">Guardar Tarea</button>
       </form>
-      <p>
-        Para volver a la lista de tareas, hace click
-        <a href="list.html">Acá</a>
+
+      <p class="return-link">
+        Para volver a la lista de tareas, haz clic <a href="list.html">aquí</a>.
       </p>
     </main>
   </body>
